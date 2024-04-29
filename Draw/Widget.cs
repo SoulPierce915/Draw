@@ -40,6 +40,10 @@ namespace Draw
 
         public Rectangle(int width, int height) : base("Rectangle")
         {
+            if ((width < 0) && (height < 0))
+            {
+                throw new ArgumentException(string.Format("Size parameters must be above 0. width:{0}, height:{1}",width,height));
+            }
             Width = width;
             Height = height;
         }
@@ -58,6 +62,10 @@ namespace Draw
 
         public Square(int size) : base("Square")
         {
+            if (size < 0)
+            {
+                throw new ArgumentException(string.Format("Size parameter must be above 0. size:{0}", size));
+            }
             Size = size;
         }
 
@@ -76,6 +84,10 @@ namespace Draw
 
         public Ellipse(int diameterH, int diameterV) : base("Ellipse")
         {
+            if ((diameterH < 0) && (diameterV < 0))
+            {
+                throw new ArgumentException(string.Format("Size parameters must be above 0. diameterH:{0}, diameterV:{1}", diameterH, diameterV));
+            }
             DiameterH = diameterH;
             DiameterV = diameterV;
         }
@@ -94,6 +106,10 @@ namespace Draw
 
         public Circle(int size) : base("Circle")
         {
+            if (size < 0)
+            {
+                throw new ArgumentException(string.Format("Size parameter must be above 0. size:{0}", size));
+            }
             Size = size;
         }
 
@@ -114,6 +130,10 @@ namespace Draw
 
         public Textbox(int width, int height, string text) : base("Textbox")
         {
+            if ((width < 0) && (height < 0))
+            {
+                throw new ArgumentException(string.Format("Size parameters must be above 0. width:{0}, height:{1}", width, height));
+            }
             Width = width;
             Height = height;
             Text = text;
@@ -121,7 +141,7 @@ namespace Draw
 
         public override string Output()
         {
-            return string.Format("{0} width={1} height={2}", GetNameAndLocation(), Width, Height);
+            return string.Format("{0} width={1} height={2} Text=\"{3}\"", GetNameAndLocation(), Width, Height,Text);
         }
 
 
