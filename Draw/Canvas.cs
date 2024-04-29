@@ -30,6 +30,8 @@ namespace Draw
             {
                 Console.WriteLine(item.Output());
             }
+
+            Console.WriteLine(lineSplit);
         }
     }
 }

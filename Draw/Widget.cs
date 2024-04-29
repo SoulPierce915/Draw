@@ -35,19 +35,95 @@ namespace Draw
     //Strict class definition of a rectangle object built by extending the Widget abstract class
     public class Rectangle : Widget
     {
-        private readonly int RectangleWidth;
-        private readonly int RectangleHeight;
+        private readonly int Width;
+        private readonly int Height;
 
-        public Rectangle(int Width, int Height) : base("Rectangle")
+        public Rectangle(int width, int height) : base("Rectangle")
         {
-            RectangleWidth = Width;
-            RectangleHeight = Height;
+            Width = width;
+            Height = height;
         }
 
         public override string Output()
         {
-            return string.Format("{0} width={1} height={2}", GetNameAndLocation(), RectangleWidth, RectangleHeight);
+            return string.Format("{0} width={1} height={2}", GetNameAndLocation(), Width, Height);
         }
+
+    }
+
+    //Strict class definition of a Square object built by extending the Widget abstract class
+    public class Square : Widget
+    {
+        private readonly int Size;
+
+        public Square(int size) : base("Square")
+        {
+            Size = size;
+        }
+
+        public override string Output()
+        {
+            return string.Format("{0} size={1}", GetNameAndLocation(), Size);
+        }
+
+    }
+
+    //Strict class definition of a Square object built by extending the Widget abstract class
+    public class Ellipse : Widget
+    {
+        private readonly int DiameterH;
+        private readonly int DiameterV;
+
+        public Ellipse(int diameterH, int diameterV) : base("Ellipse")
+        {
+            DiameterH = diameterH;
+            DiameterV = diameterV;
+        }
+
+        public override string Output()
+        {
+            return string.Format("{0} diameterH = {1} diameterV = {2}", GetNameAndLocation(), DiameterH, DiameterV);
+        }
+
+    }
+
+    //Strict class definition of a Square object built by extending the Widget abstract class
+    public class Circle : Widget
+    {
+        private readonly int Size;
+
+        public Circle(int size) : base("Circle")
+        {
+            Size = size;
+        }
+
+        public override string Output()
+        {
+            return string.Format("{0} size={1}", GetNameAndLocation(), Size);
+        }
+
+    }
+
+    //Strict class definition of a Textbox object built by extending the Widget abstract class
+    public class Textbox : Widget
+    {
+        private readonly int Width;
+        private readonly int Height;
+        private readonly string Text;
+
+
+        public Textbox(int width, int height, string text) : base("Textbox")
+        {
+            Width = width;
+            Height = height;
+            Text = text;
+        }
+
+        public override string Output()
+        {
+            return string.Format("{0} width={1} height={2}", GetNameAndLocation(), Width, Height);
+        }
+
 
     }
 }
