@@ -4,10 +4,12 @@ using System.Text;
 
 namespace Draw
 {
+    //abstract class Widget is the base for all objects that can be drawn by the package
     public abstract class Widget
     {
+        private int LocationX, LocationY;
 
-        public int LocationX, LocationY;
+        //Since read only can be public (helpful in testing)
         public readonly string WidgetName;
 
         public Widget(string name)
@@ -26,6 +28,11 @@ namespace Draw
             LocationY = YCoord;
 
             return this;
+        }
+
+        public (int,int) CurrentLocation()
+        {
+            return (LocationX, LocationY);
         }
 
         //Method returns string representation of widget
@@ -76,7 +83,7 @@ namespace Draw
 
     }
 
-    //Strict class definition of a Square object built by extending the Widget abstract class
+    //Strict class definition of a Ellipse object built by extending the Widget abstract class
     public class Ellipse : Widget
     {
         private readonly int DiameterH;
@@ -99,7 +106,7 @@ namespace Draw
 
     }
 
-    //Strict class definition of a Square object built by extending the Widget abstract class
+    //Strict class definition of a Circle object built by extending the Widget abstract class
     public class Circle : Widget
     {
         private readonly int Size;

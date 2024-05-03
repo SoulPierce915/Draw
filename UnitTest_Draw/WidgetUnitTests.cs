@@ -17,13 +17,17 @@ namespace UnitTest_Draw
 
             Widget testWidget = new Square(1);
 
-            Assert.AreEqual(beginningLocationX, testWidget.LocationX, "Widget beginning location (x-axis) not initialised to 0");
-            Assert.AreEqual(beginningLocationY, testWidget.LocationY,  "Widget beginning location (y-axis) not initialised to 0");
+            (int, int) currentLocation = testWidget.CurrentLocation();
+
+            Assert.AreEqual(beginningLocationX, currentLocation.Item1, "Widget beginning location (x-axis) not initialised to 0");
+            Assert.AreEqual(beginningLocationY, currentLocation.Item2,  "Widget beginning location (y-axis) not initialised to 0");
 
             testWidget.SetLocation(updateX, updateY);
 
-            Assert.AreEqual(updateX, testWidget.LocationX,  "updated widget location (x-axis) incorrect");
-            Assert.AreEqual(updateY, testWidget.LocationY,  "updated widget location (y-axis) incorrect");
+            currentLocation = testWidget.CurrentLocation();
+
+            Assert.AreEqual(updateX, currentLocation.Item1,  "updated widget location (x-axis) incorrect");
+            Assert.AreEqual(updateY, currentLocation.Item2,  "updated widget location (y-axis) incorrect");
         }
     }
 
