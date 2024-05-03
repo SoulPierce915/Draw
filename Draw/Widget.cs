@@ -42,7 +42,7 @@ namespace Draw
         {
             if ((width < 0) && (height < 0))
             {
-                throw new ArgumentException(string.Format("Size parameters must be above 0. width:{0}, height:{1}",width,height));
+                throw new ArgumentException(string.Format("Size parameters must be positive. width:{0}, height:{1}",width,height));
             }
             Width = width;
             Height = height;
@@ -64,7 +64,7 @@ namespace Draw
         {
             if (size < 0)
             {
-                throw new ArgumentException(string.Format("Size parameter must be above 0. size:{0}", size));
+                throw new ArgumentException(string.Format("Size parameters must be positive. size:{0}", size));
             }
             Size = size;
         }
@@ -86,9 +86,9 @@ namespace Draw
         {
             if ((diameterH < 0) && (diameterV < 0))
             {
-                throw new ArgumentException(string.Format("Size parameters must be above 0. diameterH:{0}, diameterV:{1}", diameterH, diameterV));
+                throw new ArgumentException(string.Format("Size parameters must be positive. diameterH:{0}, diameterV:{1}", diameterH, diameterV));
             }
-            DiameterH = diameterH;
+            DiameterH = diameterH; 
             DiameterV = diameterV;
         }
 
@@ -108,7 +108,7 @@ namespace Draw
         {
             if (size < 0)
             {
-                throw new ArgumentException(string.Format("Size parameter must be above 0. size:{0}", size));
+                throw new ArgumentException(string.Format("Size parameters must be positive. size:{0}", size));
             }
             Size = size;
         }
@@ -132,7 +132,7 @@ namespace Draw
         {
             if ((width < 0) && (height < 0))
             {
-                throw new ArgumentException(string.Format("Size parameters must be above 0. width:{0}, height:{1}", width, height));
+                throw new ArgumentException(string.Format("Size parameters must be positive. width:{0}, height:{1}", width, height));
             }
             Width = width;
             Height = height;

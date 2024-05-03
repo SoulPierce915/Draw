@@ -6,6 +6,7 @@ namespace Draw
 {
     public class Canvas
     {
+        readonly int LineSplitLength = 64;
         private List<Widget> items;
 
         public Canvas()
@@ -18,20 +19,24 @@ namespace Draw
             items.Add(wdgt);
         }
 
-        public void Draw()
+        public string Draw()
         {
-            string lineSplit = new string('-', 64);
+            StringBuilder output = new StringBuilder();
 
-            Console.WriteLine(lineSplit);
-            Console.WriteLine("Requested Drawing");
-            Console.WriteLine(lineSplit);
+            string lineSplit = new string('-', LineSplitLength);
+
+            output.AppendLine(lineSplit);
+            output.AppendLine("Requested Drawing");
+            output.AppendLine(lineSplit);
 
             foreach (Widget item in items)
             {
-                Console.WriteLine(item.Output());
+                output.AppendLine(item.Output());
             }
 
-            Console.WriteLine(lineSplit);
+            output.AppendLine(lineSplit);
+
+            return output.ToString();
         }
     }
 }
